@@ -1,0 +1,349 @@
+commit 1a0411c2f93e4b933438f18021915c14fa3dfef4
+Author: hogimn <hogimn@gmail.com>
+Date:   Mon May 15 21:40:11 2023 +0900
+
+    Yocto: Solution for assignment-7-part-2
+    
+    Buildroot and Yocto Kernel Driver Builds
+
+commit 2feb5ab8f24b820f7466d983b673f65943eb298d
+Merge: ee44152 9ef5c02
+Author: hogimn <hogimn@gmail.com>
+Date:   Tue May 16 01:05:12 2023 +0900
+
+    Merge remote-tracking branch 'yocto-assignments-base/assignment7'
+
+commit ee4415262a92d6e4e6962020a616017b22ac5346
+Author: hogimn <hogimn@gmail.com>
+Date:   Sun May 14 10:01:27 2023 +0900
+
+    Yocto: Solution for assignment-6-part-2
+    
+    Yocto Environment Bringup
+
+commit 9ef5c02bb4525f2048a11e9dfc57a665a749fad7
+Merge: 5b4f4c2 da67390
+Author: Dan Walkes <danwalkes@trellis-logic.com>
+Date:   Sat Feb 11 14:36:12 2023 -0700
+
+    Merge branch 'master' into assignment7
+
+commit da673904f91af1f731b51432c5296d54a4a1bda8
+Merge: df3bbb9 4f71375
+Author: Dan Walkes <danwalkes@trellis-logic.com>
+Date:   Mon Jan 16 19:42:45 2023 -0700
+
+    Merge pull request #9 from cu-ecen-aeld/s23updates
+    
+    S23updates
+
+commit 4f71375004e9def66f3243db264b02b6b7255439
+Author: Dan Walkes <danwalkes@trellis-logic.com>
+Date:   Sun Jan 15 07:24:55 2023 -0700
+
+    assignment-autotest: go to latest commit
+    
+    In preparation for S23 semester
+
+commit 2a8fd69755b47d12bc31a8d341b3fcd2e08f7857
+Author: Dan Walkes <danwalkes@trellis-logic.com>
+Date:   Sun Jan 15 07:24:33 2023 -0700
+
+    github-actions: skip re-run on tags
+    
+    See related MR cu-ecen-aeld/aesd-assignments#5
+    and commit cu-ecen-aeld/aesd-assignments@27c17d4
+    on aesd-assignments repo
+
+commit df3bbb9bf83bcda4270de57333a793da8cb59394
+Merge: 0de10bf d3d5779
+Author: Dan Walkes <danwalkes@trellis-logic.com>
+Date:   Mon Sep 26 00:00:28 2022 -0600
+
+    Merge pull request #8 from cu-ecen-aeld/fix-image-reference
+    
+    Fix image reference
+
+commit d3d5779fa77a99ba19b21f2a896b11626a6db3af
+Author: Dan Walkes <danwalkes@trellis-logic.com>
+Date:   Sun Sep 25 20:27:43 2022 -0600
+
+    Fix image reference
+    
+    Use CORE_IMAGE_EXTRA_INSTALL in commented out section instead of
+    IMAGE_INSTALL, since it's not safe to use += on IMAGE_INSTALL.
+
+commit 5b4f4c26e807dada8b717ba16b9b5380560e8a9d
+Author: Dan Walkes <danwalkes@trellis-logic.com>
+Date:   Sat Aug 13 20:28:54 2022 -0600
+
+    Go to assignment 7
+
+commit 0de10bfde56ddadcad9d5ec61399038570cbe2ed
+Author: Dan Walkes <danwalkes@trellis-logic.com>
+Date:   Sat Aug 13 20:39:58 2022 -0600
+
+    Use no strict host checking
+    
+    This matches what we do for buildroot downloads.  Without it we
+    can't run on unattended build servers or servers which haven't
+    yet accepted github's key signature in known_hosts
+
+commit 62f3e73c21c54ec6989598d8ec045b7dfb78a83b
+Merge: 5cb61ca 4b46ae3
+Author: Dan Walkes <danwalkes@trellis-logic.com>
+Date:   Sun Aug 7 15:02:30 2022 -0500
+
+    Merge pull request #7 from cu-ecen-aeld/assignment-6-f22-updates
+    
+    Assignment 6 f22 updates
+
+commit 4b46ae34efae9ffb09c77187aaced9bdff0bb0b6
+Author: Dan Walkes <danwalkes@trellis-logic.com>
+Date:   Sun Aug 7 13:40:23 2022 -0600
+
+    Kirkstone updates for image
+    
+    * Fix usermod step, -P option is no longer supported.  See updates at [1] and
+    discussion at [2].
+    * Convert syntax for overrides.
+
+commit 412e3e2b6cde8479d8bb3df4acf36fe471ec35f8
+Author: Dan Walkes <danwalkes@trellis-logic.com>
+Date:   Sun Aug 7 13:34:31 2022 -0600
+
+    Assignments recipe updates for kirkstone
+    
+    * Modify syntax for variable definitions per migration
+    notes from honister at [1]
+    
+    * Update links to match new yocto manual locations
+    
+    1:  https://docs.yoctoproject.org/migration-guides/migration-3.4.html#override-syntax-changes
+
+commit dfc53d58074df97d546483b278881ea706376e86
+Author: Dan Walkes <danwalkes@trellis-logic.com>
+Date:   Sun Aug 7 13:30:23 2022 -0600
+
+    Add kirkstone support
+
+commit 6b5018fe6145b294e2f752780cc8c7f217d4648c
+Author: Dan Walkes <danwalkes@trellis-logic.com>
+Date:   Sun Aug 7 13:26:59 2022 -0600
+
+    Rework automation for yocto builds
+    
+    Use crops/poky container for yocto builds, to ensure a stable
+    build environment for all build machines using docker containers.
+    
+    Remove outdated and no longer working ssh github action.
+
+commit 5cb61cab2b83eed5250776d2c0476d008859c0b7
+Author: Dan Walkes <danwalkes@trellis-logic.com>
+Date:   Sun Oct 10 19:06:47 2021 -0600
+
+    Disable clean on checkout
+    
+    To support incremental builds
+
+commit 53d7eaf12fef9e514abbfceb58684cfa167c0adf
+Author: Dan Walkes <danwalkes@trellis-logic.com>
+Date:   Fri Oct 8 20:57:00 2021 -0600
+
+    Fix syntax issue
+
+commit 1d2e7223d50dda85b9b81c42ea79e86ae79a0017
+Author: Dan Walkes <danwalkes@trellis-logic.com>
+Date:   Sun Oct 3 01:07:22 2021 -0600
+
+    Fix submodule checkout step
+    
+    To remove no longer supported action, fix letsencrypt issue
+
+commit b17d1586df772c05632ea7ffb818eec7682465b7
+Author: Dan Walkes <danwalkes@trellis-logic.com>
+Date:   Mon Aug 9 21:12:27 2021 -0600
+
+    Don't use docker runner
+    
+    This causes issues when UID/GID mismatches occur between the user
+    who starts the autotest environment and the user running the container.
+    
+    Since yocto builds don't work well inside a root container, this means
+    we should just build outside a container.  Will be a requirement
+    to make sure your host is setup properly.
+
+commit 72646b0a1622cf3eed79912c66e396f1345702b9
+Author: Dan Walkes <danwalkes@trellis-logic.com>
+Date:   Sun Aug 8 21:16:14 2021 -0600
+
+    Update assignment autotest and modules
+    
+    To match location of aeld renamed repo
+
+commit 6257ba4e5c60f29ea74c75077b6926c1bb798bd4
+Author: Dan Walkes <danwalkes@trellis-logic.com>
+Date:   Sat Jul 24 16:35:33 2021 -0600
+
+    Add better error message for missing keys
+
+commit cbedb23a05454bacd2cdae39be0329e31aa56d27
+Author: Dan Walkes <danwalkes@trellis-logic.com>
+Date:   Sat Jul 17 13:46:40 2021 -0600
+
+    Set the username/password to root/root
+    
+    To match buildroot builds
+
+commit 2ec19009d47de004d0b6c888f59f54da4bb2da3a
+Author: Dan Walkes <danwalkes@trellis-logic.com>
+Date:   Sun Jul 11 16:24:58 2021 -0600
+
+    Reference server subdirectory
+
+commit 04bab67f05f4e89e83591382cca1c1a93d6bc433
+Author: Dan Walkes <danwalkes@trellis-logic.com>
+Date:   Sun Jul 11 14:53:45 2021 -0600
+
+    Use autotest admin user instead of UID
+
+commit f10e31f1a78670518afeced9646b972fee4a1efc
+Author: Dan Walkes <danwalkes@trellis-logic.com>
+Date:   Sun Jul 11 14:45:33 2021 -0600
+
+    Successful yocto autotest
+    
+    * Add fix for host key verification failures on github
+    repo clones.
+    * Latest assignment autotest
+    
+    See https://github.com/cu-ecen-aeld/yocto-complete-private/actions/runs/1020594168
+
+commit 87d9aaa237c5fc79d87c3d23b6ae398b6ba4d634
+Author: Dan Walkes <danwalkes@trellis-logic.com>
+Date:   Sat Jul 10 17:27:30 2021 -0600
+
+    Use 3000 uid
+    
+    To match user account setup in aesd-autotest-docker
+
+commit 184f23f93c90dcb453130722b40badf300c56f6e
+Author: Dan Walkes <danwalkes@trellis-logic.com>
+Date:   Sat Jul 10 17:13:42 2021 -0600
+
+    Run as non root user (requried for bitbake)
+
+commit 5c4bf8b00ebdd77afa4814bbeed9438c0de2acbc
+Author: Dan Walkes <danwalkes@trellis-logic.com>
+Date:   Sat Jul 10 11:58:40 2021 -0600
+
+    Latest assignment autotest
+
+commit c3b6c2b42140dbc63b777e4b5d0e0de0d28994f5
+Author: Dan Walkes <danwalkes@trellis-logic.com>
+Date:   Sat Jul 10 11:47:56 2021 -0600
+
+    Rename test script to full-test.sh
+
+commit 39c121e0851e4c8f9972dd50b63facd72ab9c573
+Author: Dan Walkes <danwalkes@trellis-logic.com>
+Date:   Sat Jul 10 11:36:55 2021 -0600
+
+    Update git paths
+
+commit 835443c811094850e22a854ee66128df314c4b85
+Author: Dan Walkes <danwalkes@trellis-logic.com>
+Date:   Sat Jul 10 11:33:28 2021 -0600
+
+    Go to hardknott
+
+commit d2855edde963df9912e353289651333c64ced277
+Author: Dan Walkes <danwalkes@trellis-logic.com>
+Date:   Sat Jul 10 10:58:21 2021 -0600
+
+    Add github actions support
+
+commit 5d5fb4e187b0509ba3556f63593bce7eb5030d1f
+Author: Akshita Bhasin <akshita.bhasin@colorado.edu>
+Date:   Sat Sep 5 21:26:53 2020 -0600
+
+    Fix layer.conf
+
+commit a2f7a940ba3c7dcd579eb092dee1fa61db97a5fb
+Author: Dan Walkes <walkes@colorado.edu>
+Date:   Sat Aug 29 19:35:03 2020 -0600
+
+    Go to latest assignment autotest
+
+commit 4e24c5f8af7c7b8f496548f32a21109079b9b02d
+Author: Dan Walkes <walkes@colorado.edu>
+Date:   Sat Aug 29 14:36:24 2020 -0600
+
+    Add automated test support
+
+commit 6304ba50f7b7d56af8815c21173946da125fc768
+Author: Siddhant Jajoo <sija6678@colorado.edu>
+Date:   Wed May 20 12:52:33 2020 -0600
+
+    Adding runqemu.sh using slirp
+
+commit 84bdaab0eaf42b1be8a1245565f494321cf2c042
+Author: Dan Walkes <walkes@colorado.edu>
+Date:   Sat Feb 29 17:00:46 2020 -0700
+
+    Move set -e
+    
+    This can't be at the beginning of the script or initial builds will
+    fail, since grep will return non-zero exit codes.
+
+commit 066fb0bbe69d28eb6c39678ccc33ca087d241ccd
+Author: Siddhant Jajoo <siddhant.jajoo@colorado.edu>
+Date:   Thu Feb 27 00:53:44 2020 -0700
+
+    Adding openssh package
+
+commit 539b45dec2c9404ea83b038f4deb78a391392706
+Author: Siddhant Jajoo <siddhant.jajoo@colorado.edu>
+Date:   Wed Feb 26 13:25:16 2020 -0700
+
+    set -e Update
+
+commit d289878e06f512c5407627f28e5999871c88961a
+Author: Dan Walkes <daniel.walkes@colorado.edu>
+Date:   Sun Oct 20 06:26:50 2019 -0600
+
+    Update build.sh
+    
+    Remove space on #!/bin/bash
+
+commit ce3bee375f3e09fe006b3b8f1351a842aee74ead
+Author: steve <stxa1234@colorado.edu>
+Date:   Thu Oct 10 22:06:06 2019 -0600
+
+    changed lpthread to pthread
+
+commit bfcea2cab2afb8f6c8ed04da1880435eaa1cc369
+Author: Dan Walkes <danwalkes@trellis-logic.com>
+Date:   Wed Oct 9 20:44:00 2019 -0600
+
+    Remove README
+
+commit f5c401e3a61d14c667d5f4b25a8f53e60de84b77
+Author: Dan Walkes <danwalkes@trellis-logic.com>
+Date:   Wed Oct 9 19:47:08 2019 -0600
+
+    Comment out aesd-assignments package initially
+
+commit d306865f691932b1d3ef62399bd9c8a9cc6e1c89
+Author: Dan Walkes <danwalkes@trellis-logic.com>
+Date:   Wed Oct 9 19:16:26 2019 -0600
+
+    Initial content
+    
+    For use with yocto assignments
+
+commit d337e440ed15cdb31502c4d04916b0f8eb02b7d1
+Author: Dan Walkes <danwalkes@gmail.com>
+Date:   Wed Oct 9 18:54:20 2019 -0600
+
+    Initial commit

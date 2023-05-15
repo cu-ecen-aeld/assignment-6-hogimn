@@ -1,0 +1,27 @@
+diff --git a/Makefile b/Makefile
+index 7b08c49..aedde98 100644
+--- a/Makefile
++++ b/Makefile
+@@ -1,8 +1,5 @@
+ 
+-SUBDIRS =  misc-progs misc-modules \
+-           skull scull scullc scullp lddbus sculld scullv shortprint simple tty \
+-	   pci usb\
+-	   sbull snull short
++SUBDIRS = scull
+ 
+ all: subdirs
+ 
+diff --git a/scull/scull_load b/scull/scull_load
+index 2ef6a54..282cab7 100755
+--- a/scull/scull_load
++++ b/scull/scull_load
+@@ -13,7 +13,7 @@ fi
+ 
+ # invoke insmod with all arguments we got
+ # and use a pathname, as insmod doesn't look in . by default
+-insmod ./$module.ko $* || exit 1
++insmod /lib/modules/$(uname -r)/$module.ko $* || exit 1
+ 
+ # retrieve major number
+ major=$(awk "\$2==\"$module\" {print \$1}" /proc/devices)

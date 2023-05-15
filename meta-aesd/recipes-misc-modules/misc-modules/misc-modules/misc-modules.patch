@@ -1,0 +1,27 @@
+diff --git a/Makefile b/Makefile
+index 7b08c49..0966da5 100644
+--- a/Makefile
++++ b/Makefile
+@@ -1,8 +1,5 @@
+ 
+-SUBDIRS =  misc-progs misc-modules \
+-           skull scull scullc scullp lddbus sculld scullv shortprint simple tty \
+-	   pci usb\
+-	   sbull snull short
++SUBDIRS =  misc-modules
+ 
+ all: subdirs
+ 
+diff --git a/misc-modules/module_load b/misc-modules/module_load
+index a669c5e..73654fa 100755
+--- a/misc-modules/module_load
++++ b/misc-modules/module_load
+@@ -22,7 +22,7 @@ else
+ fi
+ 
+ echo "Load our module, exit on failure"
+-insmod ./$module.ko $* || exit 1
++insmod /lib/modules/$(uname -r)/$module.ko $* || exit 1
+ echo "Get the major number (allocated with allocate_chrdev_region) from /proc/devices"
+ major=$(awk "\$2==\"$module\" {print \$1}" /proc/devices)
+ if [ ! -z ${major} ]; then
